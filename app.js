@@ -14,15 +14,16 @@ import {
 
 // ─────────────────────────────────────
 //  🔥 FIREBASE CONFIG
-//  Replace with your own Firebase project config!
+//  Mau Connect Firebase Project
 // ─────────────────────────────────────
 const firebaseConfig = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId:             "YOUR_APP_ID"
+  apiKey: "AIzaSyCs2INSkHf6Ncev2Z3LaIIZPVsGyrsle-A",
+  authDomain: "mau-connect.firebaseapp.com",
+  projectId: "mau-connect",
+  storageBucket: "mau-connect.firebasestorage.app",
+  messagingSenderId: "852503073003",
+  appId: "1:852503073003:web:b451bec5a126d3517beeae",
+  measurementId: "G-S0RE31VGZW"
 };
 
 // ─────────────────────────────────────
@@ -452,3 +453,4 @@ if (saved) {
 }
 
 showPage('home');
+                                                
