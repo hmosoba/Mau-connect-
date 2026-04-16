@@ -3,19 +3,14 @@
 // ║  Firebase Firestore + Storage backend               ║
 // ╚══════════════════════════════════════════════════════╝
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import {
-  getFirestore, collection, doc, setDoc, getDoc, getDocs,
-  query, orderBy, onSnapshot, updateDoc, serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import {
-  getStorage, ref, uploadBytesResumable, getDownloadURL
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// ─────────────────────────────────────
-//  🔥 FIREBASE CONFIG
-//  Replace with your own Firebase project config!
-// ─────────────────────────────────────
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCs2INSkHf6Ncev2Z3LaIIZPVsGyrsle-A",
   authDomain: "mau-connect.firebaseapp.com",
@@ -26,6 +21,9 @@ const firebaseConfig = {
   measurementId: "G-S0RE31VGZW"
 };
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 // ─────────────────────────────────────
 //  INIT
 // ─────────────────────────────────────
