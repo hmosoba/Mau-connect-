@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vibe — Social Space</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">vibe<span class="dot">.</span></div>
+    <div id="nav-user" class="nav-user hidden"></div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       PAGE: REGISTER / HOME
+  ══════════════════════════════ -->
+  <div id="page-home" class="page active">
+
+    <!-- Hero / Register panel -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Your space.<br/><em>Your vibe.</em></h1>
+        <p>Join the community. Share moments. React freely.</p>
+      </div>
+      <div class="register-card" id="register-card">
+        <h2>Create Account</h2>
+        <div class="form-group">
+          <label>Username</label>
+          <input id="reg-username" type="text" placeholder="e.g. cosmic_jane" autocomplete="off"/>
+          <span id="username-feedback" class="feedback"></span>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input id="reg-dob" type="date"/>
+        </div>
+        <div class="form-group">
+          <label>Sex</label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="sex" value="Male"/> Male</label>
+            <label class="radio-label"><input type="radio" name="sex" value="Female"/> Female</label>
+            <label class="radio-label"><input type="radio" name="sex" value="Other"/> Other</label>
+          </div>
+        </div>
+        <button class="btn-primary" id="btn-register">Join Vibe →</button>
+        <p class="login-hint">Already have an account? <a href="#" id="link-to-login">Sign in</a></p>
+      </div>
+
+      <!-- Login card (toggled) -->
+      <div class="register-card hidden" id="login-card">
+        <h2>Welcome back</h2>
+        <div class="form-group">
+          <label>Username</label>
+          <input id="login-username" type="text" placeholder="Your username" autocomplete="off"/>
+          <span id="login-feedback" class="feedback"></span>
+        </div>
+        <button class="btn-primary" id="btn-login">Sign In →</button>
+        <p class="login-hint">New here? <a href="#" id="link-to-register">Create account</a></p>
+      </div>
+    </section>
+
+    <!-- User list -->
+    <section class="user-list-section" id="user-list-section">
+      <h3 class="section-title">Community <span id="user-count"></span></h3>
+      <div class="user-list" id="user-list"></div>
+    </section>
+
+  </div>
+
+  <!-- ══════════════════════════════
+       PAGE: PROFILE
+  ══════════════════════════════ -->
+  <div id="page-profile" class="page">
+    <div class="profile-wrapper">
+      <button class="btn-back" id="btn-back">← Back</button>
+      <div class="profile-header">
+        <div class="profile-avatar-wrap">
+          <img id="profile-avatar" src="" alt="avatar"/>
+          <div class="avatar-initial" id="profile-initial"></div>
+        </div>
+        <div class="profile-meta">
+          <h2 id="profile-username"></h2>
+          <div class="profile-tags">
+            <span class="tag" id="profile-sex"></span>
+            <span class="tag" id="profile-dob"></span>
+          </div>
+        </div>
+        <div id="upload-area" class="upload-area hidden">
+          <button class="btn-upload" id="btn-upload-image">+ Upload Image</button>
+          <input type="file" id="file-input" accept="image/*" class="hidden"/>
+        </div>
+      </div>
+
+      <div class="gallery-section">
+        <h3 class="section-title">Gallery</h3>
+        <div class="gallery-grid" id="gallery-grid">
+          <div class="gallery-empty" id="gallery-empty">No images yet.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       IMAGE LIGHTBOX
+  ══════════════════════════════ -->
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">×</button>
+      <img id="lightbox-img" src="" alt=""/>
+      <div class="lightbox-reactions" id="lightbox-reactions"></div>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
